@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #cad3db">
+<head>
+<title>SERCURITY</title>
+<link rel="icon" type="image/png" href="assets/images/cer.png"/>
+<%- include ('../partials/head') %>
+</head>
+<body>
+    <header>
+        <%- include ('../partials/header') %> 
+    </header>
+    <main>
+        <div id="divusers" class="container-fluid " style="margin-top:46px;background-color: #cad3db">
+            <h2 class="text-center"><i class="fa fa-list-alt" aria-hidden="true"></i>
+                LIST USERS</h2>
+            <div class="row">
+                <div class="col-sm-6 col-lg-6">
+                    <div class="jumbotron listuser">
+                        <div id = "usermanager">
+                            <% users.forEach(function(item){ %>    
+                            <div class="listuser1">
+                                <span><i class="fa fa-user-circle" aria-hidden="true"></i>
+                                    <%- item.user_name %>
+                                    <!-- <i class="fa fa-info-circle" aria-hidden="true" id="info_user"></i> -->
+                                    <img src="assets/images/status.png" class = "fa-info-circle" id="info_user" alt="OPCUAserverLOGO" style="cursor:pointer;width: 20px;height: 20px;margin-bottom: 3px;">
+                                    </span>
+                            </div>     
+                            <div class="detailinfo1" id="detail_user">
+                                <table class="table">
+    
+                                    <tbody>
+                                     <tr>
+                                         <th>userName</th>
+                                         <th><%- item.user %></th>
+                                     </tr>
+                                     <tr>
+                                         <th>Password</th>
+                                         <th><%- item.password%></th>
+                                     </tr>
+                                     </tbody>
+                                 </table>
+    
+                            </div>
+                            <% }); %>
+                
+                        </div>
+                    </div>
+                    <div id="list_cer">
+                        <img src="assets/images/certificate.png" alt="OPCUAserverLOGO" style="cursor:pointer;width: 20px;height: 20px;margin-bottom: 3px;">
+                        <span> LIST CERTIFICATE                         
+                        </span>
+                    </div>
+
+                    <div id = "show_cer" class = "table-responsive HA">                        
+                            <table class="table">
+                                <tbody id = "info_cer">
+                                                          
+                                 </tbody>
+                             </table>                      
+                    </div>
+                    <div id="detail_cer" class = "table-responsive HA">
+                        <p><b>TRUSTED LIST</b></p>
+                        <table class="table" >
+                            <tbody id="trusted">                             
+                             </tbody>
+                         </table>
+                         <p><b>REJECTED LIST</b></p>
+                        <table class="table">
+                            <tbody id="rejected">                             
+                             </tbody>
+                         </table>
+                    </div>
+
+                    <div id="list_cer_after">
+                        <span>
+                            <img src="assets/images/certificate.png" class="cer_after" alt="OPCUAserverLOGO" style="cursor:pointer;width: 20px;height: 20px;margin-bottom: 3px;">
+                            LIST CERTIFICATE (set up from next startup)   
+                            <img src="assets/images/res.png" alt="OPCUAserverLOGO" style="cursor:pointer;margin-left:20%;width: 20px;height: 20px;margin-bottom: 3px;" id="restart" data-toggle="modal" data-target="#exampleModal">
+                            <b>APPLY</b>
+                            <div>
+                            </div>
+                        </span>
+                        
+                        
+                    </div>
+                    <div id="detail_cer_after" class = "table-responsive HA">
+                        <p><b>TRUSTED LIST</b></p>
+                        <table class="table" >
+                            <tbody id="trusted_after">                             
+                             </tbody>
+                         </table>
+                         <p><b>REJECTED LIST</b></p>
+                        <table class="table">
+                            <tbody id="rejected_after">                             
+                             </tbody>
+                         </table>
+                    </div>
+<!-- 
+                    <div id="list_user_after">
+                        <span><i class="fa fa-user-circle user_after" aria-hidden="true"> USERS (set up from next startup)</i>                           
+                        </span>
+                    </div>
+                    <div id="detail_user_after" class = "table-responsive HA">
+                        <p><b>NEW USER</b></p>
+                        <table class="table" >
+                            <tbody id="new_after">                             
+                             </tbody>
+                         </table>
+                         <p><b>USER DELETED</b></p>
+                        <table class="table">
+                            <tbody id="deleted_after">                             
+                             </tbody>
+                         </table>
+                    </div> -->
+
+                </div>
+                <div class="col-sm-6 col-lg-6">
+                 
+                        <div style="padding-left: 20%;">
+                            <img src="assets/images/add-user-male.png" alt="OPCUAserverLOGO" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            <b>Add New User</b>
+                        </div> 
+                    <form class="form-group" id="creatuser">
+                        <input class="form-control" id="name_user" name="name_user" placeholder="User Name" type="text" required>
+                        <br>
+                        <input class="form-control" id="pass_user" type="password" name="pass_user" placeholder="Password" type="text" required>
+                        <br>
+                        <input class="form-control" id="pass_user_2" type="password" name="pass_user_2" placeholder="Confirm Password" type="text" required>
+                        <br>
+                        <div id="nuttaomoi_user">
+                            <input type="reset" class="btn btn-primary pull-right" id="adduser" value="CREATE" class="demnguoc" data-toggle="modal" data-target="#exampleModal">
+                        </div>
+                        <div id = "thongbaouser_1"><b>Name User is not valid</b></div>
+                        <div id = "thongbaouser_2"><b>Password is not valid</b></div>
+                        <div id = "thongbaouser_3"><b>Error Confirm Password</b></div>
+                        <div id = "thongbaouser_5"><b>ERROR</b></div>
+                    </form>
+                    <br>
+                    <div style="padding-left: 20%;">
+                        <img src="assets/images/remove-user-male.png" alt="OPCUAserverLOGO" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                        <b>Remove New User</b>
+                    </div>
+                    <form class="form-group" id="deleteuser">
+                        <input class="form-control" id="name_user_del" name="name_user_del" placeholder="User Name" type="text" required>
+                        <br>
+                        <div id="nutxoa_user">
+                            <input type="reset" class="btn btn-primary pull-right" id="delete_user" value="DELETE" class="demnguoc" data-toggle="modal" data-target="#exampleModal">
+                        </div>
+                        <div id = "thongbaouser_4"><b>Name User is not valid</b></div>
+                        <div id = "thongbaouser_6"><b>ERROR</b></div>
+                    </form>
+                    <br> 
+                    <form class="form-group" id="change_mode_sercurity">
+                        <select class="form-control" id="change_mode" name="change_mode">
+                            <optgroup label = "Choose Mode">
+                                <option value=true>AllowAnonymous</option>
+                                <option value=false>Not AllowAnonymous</option>                               
+                            </optgroup>
+                        </select>                        
+                        <div id="nuttaomoi_user">
+                            <input type="button" class="btn btn-primary pull-right" id="confirm" value="CONFIRM" class="demnguoc" data-toggle="modal" data-target="#exampleModal">
+                        </div>
+                    </form> 
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background-color: #5f6a63;">
+                      <h4 class="modal-title" id="exampleModalLabel"><b>NOTIFICATION</b></h4>                    
+                    </div>
+                    <div class="modal-body" style="text-align: center;">
+                       <b id="hienmodal">PLEASE RELOAD PAGE AFTER 10S</p></b>
+                      <div class="sk-chase">
+                        <div class="sk-chase-dot"></div>
+                        <div class="sk-chase-dot"></div>
+                        <div class="sk-chase-dot"></div>
+                        <div class="sk-chase-dot"></div>
+                        <div class="sk-chase-dot"></div>
+                        <div class="sk-chase-dot"></div>
+                    </div>
+                    
+                    </div>
+                    <!-- <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>          
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+        </div>  
+    </main>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="assets/js/renderserver.js"></script>
+</body>
+</html>

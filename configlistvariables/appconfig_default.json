@@ -1,0 +1,310 @@
+{
+	"appName" : "OPCUA_Communication",
+	"description" : "Sample configuration file for Data Simulation",
+	"serverConfig" :
+	{
+			"port" : 4840,
+			"allowAnonymous" : false,
+			"userList" :
+			[
+				{
+					
+					"name_user":"user_user1",
+					"user" : "user" ,
+					"password" : "user"
+				},
+				
+				{
+					
+					"name_user":"user_user2",
+					"user" : "user1" ,
+					"password" : "user1"
+				}
+			]
+	},
+	"SimulationData" :
+	[
+		{
+			"deviceName" : "Boolean",
+			"variablesList":
+			[
+				{
+						"name": "main_switch",
+						"dataType": "Bool",
+                        "writable": true,
+                        "value": true
+				},
+				{
+						"name": "emergency",
+						"dataType": "Bool",
+                        "writable": true,
+                        "value": true
+				},
+				{
+						"name": "mode",
+						"dataType": "Bool",
+                        "writable": true,
+                        "value": true
+				},
+				{
+						"name": "valve_1",
+						"dataType": "Bool",
+						"writable": true,
+						"value":true
+				},
+				{
+						"name": "valve_2",
+						"dataType": "Bool",
+						"writable": true,
+						"value": true
+				},
+				{
+						"name": "valve_3",
+						"dataType": "Bool",
+						"writable": true,
+						"value": true
+				},
+				{
+						"name": "valve_4",
+						"dataType": "Bool",
+						"writable": true,
+						"value": true
+				},
+				{
+						"name": "valve_5",
+						"dataType": "Bool",
+						"writable": true,
+						"value": true
+				},
+				{
+						"name": "valve_6",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "valve_7",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "valve_8",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "valve_CuSO4",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "valve_Cl",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "valve_Al",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "valve_Fe",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "valve_F",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "valve_out1",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "valve_out2",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "valve_out3",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "motor_mix",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "motor_ozon",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "sensor_1",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "sensor_2",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "sensor_3",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "sensor_4",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false 
+				},
+				{
+						"name": "sensor_5",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "sensor_6",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				},
+				{
+						"name": "sensor_7",
+						"dataType": "Bool",
+						"writable": true,
+						"value": false
+				}
+			]
+		},
+		{
+			"deviceName" : "Number",
+			"variablesList":
+			[
+				{
+						"name": "time_out1",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 1
+				},
+				{
+						"name": "time_out2",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 2
+				},
+				{
+						"name": "time_out3",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 3
+				},
+				{
+						"name": "time_mix",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 4
+				},
+				{
+						"name": "time_ozon",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 5
+				},
+				{
+						"name": "V_tank1",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 6
+				},
+				{
+						"name": "V_tank2",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 7
+				},
+				{
+						"name": "V_tank3",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 8
+				},
+				{
+						"name": "V_tank4",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 9
+				},
+				{
+						"name": "V_tank5",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 10
+				},
+				{
+						"name": "V_tank6",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 11
+				},
+				{
+						"name": "V_tank7",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 12
+				},
+				{
+						"name": "C_CuSO4",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 13
+				},
+				{
+						"name": "C_Cl",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 14
+				},
+				{
+						"name": "C_Fe",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 15
+				},
+				{
+						"name": "C_Al",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 16
+				},
+				{
+						"name": "C_F",
+						"dataType": "Double",
+                        "writable": true,
+                        "value": 17
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #cad3db">
+<head>
+    <title>INFORMATION SERVER</title>
+    <link rel="icon" type="image/png" href="assets/images/status.png"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>   
+    <link rel="stylesheet" href="assets/css/style_manager_server.css"> 
+<script>
+    function startTime() 
+        {
+            // Lấy Object ngày hiện tại
+            var today = new Date();
+            // Giờ, phút, giây hiện tại
+            var d = today.getDate();
+            var t = today.getMonth() + 1 ;
+            var y = today.getFullYear();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            // Chuyển đổi sang dạng 01, 02, 03
+            m = checkTime(m);
+            s = checkTime(s);
+            // Ghi ra trình duyệt
+            document.getElementById('timer').innerHTML ="<b>Server Current Time: </b>"+ " " + y + "-" + t + "-" + d +"  " + h + ":" + m + ":" + s + "+0700";
+            // Dùng hàm setTimeout để thiết lập gọi lại 0.5 giây / lần
+            var t = setTimeout(function() {
+                startTime();
+            }, 500);
+        }
+        // Hàm này có tác dụng chuyển những số bé hơn 10 thành dạng 01, 02, 03, ...
+        function checkTime(i) 
+        {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+</script>
+</head>
+<body id="myPage" onload="startTime()">
+    <header>
+        <%- include ('../partials/header') %> 
+    </header>
+    <main>
+        <div id="divstatus" style="margin-top:46px;" >
+            <div class = "container-fluid status" style="background-color: #cad3db">
+                <div class="row">
+                    <div class="col-sm-7" style="padding-top: 3%;
+                    padding-left: 8%;">
+                        <h1><b>OPCUA SERVER TEMPLATE</b>
+                            <img src="assets/images/templatee.png" alt="OPCUAserverLOGO" style="margin-bottom: 1%;width: 45px;height: 45px;">
+                        </h1>
+                        <p class="serverstatus">
+                            <img src="assets/images/status_1.png" alt="OPCUAserverLOGO" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            <b>Server Status:</b><i class="fa fa-check-circle fa-2x icononoff"></i><b>Running</b></p>
+                        <p>
+                            <img src="assets/images/cloud-link.png" alt="OPCUAserverLOGO" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            <b>Connection Address(UA TCP): </b><span id = "connectaddress"></span></p>                                       
+                        <div  id = "tieudeadd4">
+                            <span>
+                                <img src="assets/images/write.png" class ="fa-pencil-square-o"alt="OPCUAserverLOGO" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                               
+                                <b>Change port from next startup</b></span>
+                        </div>    
+                        <div id = "form4" style = "margin-top: 3%;">
+                            <form class="form-group" id="change_port">
+                                <input class="form-control" id="port_number" name="port_number" placeholder="Port number from next startup" type="text" required>
+                                <br>
+                                <div id="changenumberport">
+                                    <input type="button" class="btn btn-primary pull-right" id="changeport" value="CONFIRM" class="demnguoc" data-toggle="modal" data-target="#exampleModal">
+                                </div>
+                            </form> 
+                        </div> 
+                        <p></p>                                    
+                        <p><b>
+                            <img src="assets/images/database.png" id="dropinfo"alt="OPCUAserverLOGO" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            Server Information</b></p>
+                        <div id="detailinfo">
+                            <table class="table">
+    
+                               <tbody>
+                                <tr>
+                                    <th>Current Session Count 
+                                        <img id = "refresh_1"  class="fa fa-refresh" src="assets/images/loop.png" alt="OPCUAserverLOGO" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                                        <!-- <i id = "refresh_1" class="fa fa-refresh" aria-hidden="true"></i> -->
+                                    </th>
+                                    <th id = "sessioncount" ></th>
+                                </tr>
+                                <tr>
+                                    <th>Port</th>
+                                    <th id = "port" ></th>
+                                </tr>
+                                <tr>
+                                    <th>Server Name</th>
+                                    <th>ua/node-opcua</th>
+                                </tr>
+                                <tr>
+                                    <th>AllowAnonymous</th>
+                                    <th id="allowanony"></th>
+                                </tr>
+                                <tr>
+                                    <th>SecurityModes</th>
+                                    <th>None/Sign/Sign&Encrypt</th>
+                                </tr>
+                                <tr>
+                                    <th>SecurityPolicies</th>
+                                    <th>None/Basic128RSA15/Basic256/Basic256SHA256</th>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <img src="assets/images/clock.png" id="dropinfo"alt="OPCUAserverLOGO" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                        <div id = "timer" style="display: inline;"></div> 
+                    </div>
+                    <div class="col-sm-5">
+                        <img src="assets/images/aa.png" alt="OPCUAserverLOGO" class = "responsive" style='padding-top:25%'>
+                    </div>
+                </div>            
+            </div>
+            
+        </div>   
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: #5f6a63;">
+                  <h4 class="modal-title" id="exampleModalLabel"><b>NOTIFICATION</b></h4>
+                 
+                </div>
+                <div class="modal-body" style="text-align: center;">
+                    <b>PLEASE RELOAD PAGE AFTER<p id="timedown">10S</p></b>
+                  <div class="sk-chase">
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                    <div class="sk-chase-dot"></div>
+                </div>
+                
+                </div>
+                <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>          
+                </div> -->
+              </div>
+            </div>
+        </div>    
+    </main>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="assets/js/renderserver.js"></script>
+</body>
+</html>

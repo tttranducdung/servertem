@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #cad3db">
+<head>
+<title>ADDRESS SPACE</title>
+<link rel="icon" type="image/png" href="assets/images/add.png"/>
+<%- include ('../partials/head') %>
+</script>
+</head>
+<body>
+    <header>
+        <%- include ('../partials/header') %> 
+    </header>
+    <main>
+        <div id="divaddressspace" class="container-fluid" style="margin-top:46px;">
+            <div id="htmla"></div>
+            <div class="row">
+                <div class="col-md-7" id="banghienthibien">                   
+                    <div id="0">
+                        <span>
+                            <p class ="square">0</p>
+                           
+                            <img src="assets/images/live-folder.png" alt="OPCUAserverLOGO" id="folder1" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            <b>CONTROL_MANUAL</b>
+                        </span>                   
+                   <div class = "danhsach1"></div>
+                    </div>
+
+                    <div id="1">
+                        <span>
+                            <p class ="square">1</p>
+                            <img src="assets/images/live-folder.png" alt="OPCUAserverLOGO" id="folder2" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            <b>STATUS_DEVICE</b>
+                        </span>
+                        <div class = "danhsach2"></div>
+                    </div>
+
+                    <div id="2">
+                        <span>
+                            <p class ="square">2</p>
+                            <img src="assets/images/live-folder.png" alt="OPCUAserverLOGO" id="folder3" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            <b>ERROR_SYSTEM</b>
+                        </span>
+                        <div class = "danhsach3"></div>
+                    </div>
+
+                    <div id="3">
+                        <span>
+                            <p class ="square">3</p>
+                            <img src="assets/images/live-folder.png" alt="OPCUAserverLOGO" id="folder4" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            <b>CONTROL_SYSTEM</b>
+                        </span>
+                        <div class = "danhsach4"></div>
+                    </div>
+
+                    <div id="4">
+                        <span>
+                            <p class ="square">4</p>
+                            <img src="assets/images/live-folder.png" alt="OPCUAserverLOGO" id="folder5" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            <b>ALARM_LEVEL</b>
+                        </span>
+                        <div class = "danhsach5"></div>
+                    </div>
+
+                    <div id="5">
+                        <span>
+                            <p class ="square">5</p>
+                            <img src="assets/images/live-folder.png" alt="OPCUAserverLOGO" id="folder6" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            <b>TIME_PROCESS</b>
+                        </span>
+                        <div class = "danhsach6"></div>
+                    </div>
+
+                    <div id="6">
+                        <span>
+                            <p class ="square">6</p>
+                            <img src="assets/images/live-folder.png" alt="OPCUAserverLOGO" id="folder7" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            <b>LEVEL_TANKS</b>
+                        </span>
+                        <div class = "danhsach7"></div>
+                    </div>
+
+                    <div id="7">
+                        <span>
+                            <p class ="square">7</p>
+                            <img src="assets/images/live-folder.png" alt="OPCUAserverLOGO" id="folder8" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            <b>PARAMETERS_H20</b>
+                        </span>
+                        <div class = "danhsach8"></div>
+                    </div>
+
+                    
+                    <div id="9">
+                        <span>
+                            <p class ="square">8</p>
+                            <img src="assets/images/live-folder.png" alt="OPCUAserverLOGO" id="folder10" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            <b>SET UP MANUAL</b>
+                        </span>
+                        <div class = "danhsach10"></div>
+                    </div>
+                    <div id="11">
+                        <span>
+                            <p class ="square">9</p>
+                            <img src="assets/images/live-folder.png" alt="OPCUAserverLOGO" id="folder11" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            <b>STATUS_SYSTEM</b>
+                        </span>
+                        <div class = "danhsach11"></div>
+                    </div>
+                    <div id="8">
+                        <span>
+                            <p class ="square">10</p>
+                            <img src="assets/images/live-folder.png" alt="OPCUAserverLOGO" id="folder9" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            <b>DATA_SIMULATION</b>
+                        </span>
+                    
+
+                    <div class = "danhsach9">                     
+                        <% opcs.forEach(function(item){ %>                           
+                        <div class="row motdongbien" id = "idmotdong">                                              
+                        <div class="col-md-4 col-sm-4">
+                            <div>
+                                <span id="dich" ><p class ="square"><%- item.index %></p><i class="fa fa-plus-square nutnhanplus" id="idplus"></i><%- item.name %></span>       
+                            </div>
+                        </div>    
+                        
+                        <div class="col-md-8 col-sm-8 banghienplus" id="idtable">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Value</th>
+                                </tr>
+                               </thead>
+                               <tbody>
+                                <tr>
+                                    <th>NodeID</th>
+                                    <th class="dinhdanh_db">s="<%- item.namedev %>"."<%- item.name %>"</th>
+                                </tr>
+                                <tr>
+                                    <th>Display Name</th>
+                                    <th class="name_db"><%- item.name %></th>
+                                </tr>
+                                <tr>
+                                    <th>Data Type</th>
+                                    <th class="datatype_db"><%- item.datatype %></th>
+                                </tr>
+                                <tr>
+                                    <th>Value</th>
+                                    <th class="value_db"><%- item.value %></th>
+                                </tr>
+                                <tr>
+                                    <th>AccesLevel</th>
+                                    <th class="access_db"><%- item.writable %></th>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        </div>
+                        <% }); %> 
+                    </div>
+                    
+                    </div>
+                   
+                </div>           
+                <div class="col-md-5 addordelete" id="bangadd">
+                        <div  id = "tieudeadd">
+                            <span>
+                                
+                                <img src="assets/images/add-folder.png" alt="OPCUAserverLOGO" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                                <b>Add New Variable</b></span>
+                        </div>    
+                        <div id = "form1">
+                            <form class="form-group" id ="createvar">
+                                <!--
+                                    <input class="form-control" id="namedev" name="namedev" placeholder="Device Name" type="text" required>
+                                <br>
+                                -->                               
+                                <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                                <br>
+                                <div id="value_0_">
+                                    <input class="form-control" id="value_0" name="value_0" placeholder="Value initialized" type="text" required>
+                                </div>
+                                
+                                <div id="choosetruefalse">
+
+                                    <div style = "display: inline; margin-left: 20%;">
+                                        <input type="radio" id="true_value" name="truefalse" value="true">
+                                        <label for="true_value">TRUE</label>
+                                    </div>
+                                    <div style = "display: inline; margin-left: 20%;">
+                                        <input type="radio" id="false_value" name="truefalse" value="false" checked="checked">
+                                        <label for="false_value">FALSE</label>  
+                                    </div>
+                                </div>
+                                <!-- <input class="form-control" id="datatype" name="datatype" placeholder="DataType" type="text" required>
+                                <br>
+                                <input class="form-control" id="writable" name="writable" placeholder="Access level" type="text" required>
+                                <br> -->
+                                <select class="form-control" id="datatype" name="datatype">
+                                    <optgroup label = "Choose DataType">
+                                        <option value="Bool">Boolean</option>
+                                        <option value="Int">Int</option>
+                                        <option value="Double">Double</option>
+                                        <option value="String">String</option>
+                                    </optgroup>
+                                </select>
+                                <br>
+                                <select class="form-control" id="writable" name="writable">
+                                    <optgroup label = "AccessLevel">
+                                        <option value="true">Read/Write</option>
+                                        <option value="false">OnlyRead</option>
+                                    </optgroup>
+                                </select>
+                                <br>
+                                <div id="nuttaomoi">
+                                    <input type="button" class="btn btn-primary pull-right" id="addvar" value="CREATE">
+                                </div>
+                                <div id = "thongbaotaomoi">
+                                    <b>This node is already registered.Refreshing </b>
+                                    <br>
+                                    <div class="sk-chase">
+                                        <div class="sk-chase-dot"></div>
+                                        <div class="sk-chase-dot"></div>
+                                        <div class="sk-chase-dot"></div>
+                                        <div class="sk-chase-dot"></div>
+                                        <div class="sk-chase-dot"></div>
+                                        <div class="sk-chase-dot"></div>
+                                    </div>
+                                </div>
+                                <div id = "thongbaotaobien">
+                                    <b>Registering Node to Namespace</b>
+                                    <br>
+                                    <div class="sk-chase">
+                                        <div class="sk-chase-dot"></div>
+                                        <div class="sk-chase-dot"></div>
+                                        <div class="sk-chase-dot"></div>
+                                        <div class="sk-chase-dot"></div>
+                                        <div class="sk-chase-dot"></div>
+                                        <div class="sk-chase-dot"></div>
+                                    </div>
+                                </div>
+                                <div id = "thongbaonhaplai"><b>Name Node is not valid</b></div>
+                                
+                            </form>   
+                        </div>        
+                        <div  id = "tieudeadd1">
+                            <img src="assets/images/delete-forever.png" alt="OPCUAserverLOGO" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                            
+                        
+                                <b>Delete Node</b></span>
+                        </div>   
+                        <div id = "form2">
+                            <form class="form-group" id="delete" method="POST" action="/addressspace">
+                                <input class="form-control" id="nodeid" name="nodeid" placeholder="Enter Index of Node" type="text" required>
+                                <br>
+                                <div id="nutxoa">
+                                    <input type="button" class="btn btn-primary pull-right" id="deletevar" value="DELETE">
+                                </div>
+                                <div id = "thongbaoxoa_loi"><b>CAN'T DELETE THIS NODE</b></div>
+                                <div id = "thongbaoxoa_loading">
+                                    <b>Deleting Node</b>
+                                    <br>
+                                    <div class="sk-chase">
+                                        <div class="sk-chase-dot"></div>
+                                        <div class="sk-chase-dot"></div>
+                                        <div class="sk-chase-dot"></div>
+                                        <div class="sk-chase-dot"></div>
+                                        <div class="sk-chase-dot"></div>
+                                        <div class="sk-chase-dot"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>  
+                        <div  id = "refresh">
+                            <img src="assets/images/loop.png" alt="OPCUAserverLOGO" style="cursor:pointer;margin-bottom: 1%;width: 20px;height: 20px;">
+                                <b>Update to Database</b></span>
+                        </div>                                                     
+                </div>           
+            </div>              
+        </div> 
+    
+    </main>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="assets/js/renderserver.js"></script>
+    <script src="assets/css/login_css/js/main.js"></script>
+</body>
+</html>

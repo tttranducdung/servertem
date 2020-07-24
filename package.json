@@ -1,0 +1,51 @@
+{
+  "name": "nodetest",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "asyncawait": "^3.0.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
+    "chalk": "^3.0.0",
+    "colors": "^1.4.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "fs": "0.0.1-security",
+    "fs-extra": "^9.0.0",
+    "ip": "^1.1.5",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.8.11",
+    "morgan": "^1.9.1",
+    "node-forge": "^0.9.1",
+    "node-opcua": "^2.4.1",
+    "opcua-commander": "^0.7.1",
+    "os": "^0.1.1",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "pem-file": "^1.0.1",
+    "pm2": "^4.4.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tttranducdung/opcua_new_new.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tttranducdung/opcua_new_new/issues"
+  },
+  "homepage": "https://github.com/tttranducdung/opcua_new_new#readme",
+  "description": ""
+}
